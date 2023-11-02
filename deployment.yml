@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment 
+##when i apply this manifest it is going to invoke the deployment api
+metadata:
+  name: myapp-deployment
+  labels:
+    app: nginx 
+
+#we will define the specification for the deployment
+spec:
+  replicas: 4
+  #to do mapping in k8s we use label and lable is in key value format
+  selector: #to map this label with all the 4 pod we use a k8s concept called as selector.matchLabel. 
+    matchLabels:
+      app: nginx 
+  ##inside the pod what we are going to run. container. and all the pod will have similar container defination
+  template:
+    metadata:
+      name: myapp-deployment-template
+      labels:
+        app: nginx 
+    ###metadata information about the template
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+  
