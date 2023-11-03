@@ -18,7 +18,7 @@ spec:
       - name: usermgmt-webapp 
         image: stacksimplify/kube-usermanagement-microservice:1.0.0
         ports:
-          - containerPort: 8080 
+          - containerPort: 8095    
         env: 
           - name: DB_HOSTNAME
             value: "mysql"
