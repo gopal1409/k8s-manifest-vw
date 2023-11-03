@@ -13,11 +13,9 @@ spec:
     spec:
       containers:
       - name: webapp 
-        image: gopal1409/user-mgt
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: stacksimplify/kube-usermgmt-webapp:1.0.0-MySQLDB
+
+        
         ports:
         - containerPort: 8080
         env:
