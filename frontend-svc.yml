@@ -6,7 +6,7 @@ spec:
    #loadbalancer clusterip
   type: NodePort
   selector:
-    app: webapp 
+    app: usermgmt-webapp
   ports: 
     - port: 80
       targetPort: 8080
