@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  selector:
+    app: mysql 
+  ports:
+  - port: 3306
+  clusterIP: None
+  ##we create a service called as cluster ip for mysql database. mysql database will be aavaialbe internally for communication
+  ###i have created the service as clusterip. but against cluster IP i have put none
+  ###when we create a service it create a load balancer and allocate cluster ip
+  ##only using DNS server we can communciate
+  ##here dns name is the name of the service
