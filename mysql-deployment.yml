@@ -23,7 +23,7 @@ spec:
               key: password
         ports:
         - containerPort: 3306
-        volumeMount:
+        volumeMounts:
           - name: mysql-data-1
             mountPath: /var/lib/mysql
           - name: db-script 
